@@ -12,21 +12,21 @@ User likes are saved locally for future reference.
 - Organized MVC-style structure.
 
 ### File Structure 
-|-- Tinder_For_Food
-	|-- Assets
-		|-- Images
-	|-- Controllers
-		|-- MealController.cs
-	|--Model
-		|-- DataStorage.cs
-		|-- Meal.cs
-	|-- View
-		|--MainWindow.xaml
-			|-- MainWindow.xaml.cs
-	|-- App.xaml
-	|-- App.xaml.cs
-	|-- Tinder_For_Food.csproj
-	|-- README.md
+- Tinder_For_Food
+	- Assets
+		- Images
+	- Controllers
+		- MealController.cs
+	- Model
+		- DataStorage.cs
+		- Meal.cs
+	- View
+		- MainWindow.xaml
+			- MainWindow.xaml.cs
+	- App.xaml
+	- App.xaml.cs
+	- Tinder_For_Food.csproj
+	- README.md
 
 ### Installation Instructions 
 1. Open the git repository in Visual Studio.
