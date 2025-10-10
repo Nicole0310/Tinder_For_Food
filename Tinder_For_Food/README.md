@@ -1,4 +1,4 @@
-﻿# TInder 4 Food 🍔🍕🍣
+﻿# Tinder 4 Food 🍔🍕🍣
 
 ## Project Overview 
 Tinder 4 Food is a simple WPF desktop app that lets users swipe through healthy meals, view their macros, and ingredients. 
@@ -30,14 +30,16 @@ User likes are saved locally for future reference.
 
 ### Installation Instructions 
 1. Open the git repository in Visual Studio.
-2. Download 
+2. Download the Release version of the project.
+3. OPen the project in Visual Studio.
+4. Run the application.
 
 
 ### How Data is Stored
 User input (liked meals) is stored in a local JSON file using the DataStorage class. 
 
 ### Known Issues / Limitations
-- THe meal list is hardacoded and limited. Future versions could integrate with a meal API for more variety.
+- The meal list is hardacoded and limited. Future versions could integrate with a meal API for more variety.
 - Swipe functionality is simulated with buttons. Future versions could implement actual swipe gestures.
 
 ### Debugging Summary 
