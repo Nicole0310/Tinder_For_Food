@@ -29,10 +29,9 @@ User likes are saved locally for future reference.
 	- README.md
 
 ### Installation Instructions 
-1. Open the git repository in Visual Studio.
-2. Download the Release version of the project.
-3. OPen the project in Visual Studio.
-4. Run the application.
+1.. Download the Release version of the project.
+2. OPen the project in Visual Studio.
+3. Run the application.
 
 
 ### How Data is Stored
