@@ -29,8 +29,8 @@ User likes are saved locally for future reference.
 	- README.md
 
 ### Installation Instructions 
-1.. Download the Release version of the project.
-2. OPen the project in Visual Studio.
+1. Download the Release version of the project.
+2. Open the project in Visual Studio.
 3. Run the application.
 
 
