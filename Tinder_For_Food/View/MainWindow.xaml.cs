@@ -1,64 +1,62 @@
-﻿using System.Text;
+﻿using System;
+using System.IO;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Tinder_For_Food.Controller;
-
+using Tinder_For_Food.Model;
 
 namespace Tinder_For_Food
 {
-    
-public partial class MainWindow : Window
+    public partial class MainWindow : Window
     {
-        private AppController controller;
+        private readonly AppController _controller;
 
         public MainWindow()
         {
             InitializeComponent();
-            controller = new AppController();
-            ShowCurrentMeal();
+            _controller = new AppController();
+            DisplayCurrentMeal();
         }
-        private void ShowCurrentMeal()
+
+        private void DisplayCurrentMeal()
         {
-            var meal = controller.GetCurrentMeal();
+            var meal = _controller.GetCurrentMeal();
 
-            
-            try
-            {
-                MealImage.Source = new BitmapImage(new Uri($"pack://application:,,,/{meal.ImagePath}", UriKind.Absolute));
-            }
-            catch
-            {
-                
-                MealImage.Source = null;
-            }
-
-            
             MealName.Text = meal.Name;
             CaloriesText.Text = $"Calories: {meal.Calories}";
             ProteinText.Text = $"Protein: {meal.Protein}g";
-            CarbohydratesText.Text = $"Carbs: {meal.Carbohydrates}g";
+            CarbohydratesText.Text = $"Carbohydrates: {meal.Carbohydrates}g";
             FatsText.Text = $"Fats: {meal.Fats}g";
 
-            
-            IngredientsList.ItemsSource = meal.Ingredients.Split(',').Select(i => i.Trim()).ToList();
+            // Ingredients: split by comma for the ItemsControl
+            var ingredients = meal.Ingredients
+                                  .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                                  .Select(i => i.Trim())
+                                  .ToList();
+            IngredientsList.ItemsSource = ingredients;
+
+            // Load the image
+            if (File.Exists(meal.ImagePath))
+            {
+                MealImage.Source = new BitmapImage(new Uri(Path.GetFullPath(meal.ImagePath)));
+            }
+            else
+            {
+                MealImage.Source = null;
+            }
         }
 
         private void LikeButton_Click(object sender, RoutedEventArgs e)
         {
-            controller.LikeCurrentMeal();
-            ShowCurrentMeal();
+            _controller.LikeCurrentMeal();
+            DisplayCurrentMeal();
         }
 
         private void DislikeButton_Click(object sender, RoutedEventArgs e)
-        { controller.DislikeCurrentMeal();
-            ShowCurrentMeal();
+        {
+            _controller.DislikeCurrentMeal();
+            DisplayCurrentMeal();
         }
     }
 }

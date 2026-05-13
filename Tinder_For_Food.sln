@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tinder_For_Food", "Tinder_F
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Tinder_For_Food_Setup", "Tinder_For_Food_Setup\Tinder_For_Food_Setup.vdproj", "{D5289DC4-28B6-F6CC-3CC4-9626DA2B4CE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tinder_4_food.tests", "tinder_4_food.tests\tinder_4_food.tests.csproj", "{65EC723C-12A4-4D4E-B741-6CDA65267DD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{EA669C6E-91C4-4B24-A6A2-5A40C3CB9FAE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5289DC4-28B6-F6CC-3CC4-9626DA2B4CE6}.Debug|Any CPU.ActiveCfg = Debug
 		{D5289DC4-28B6-F6CC-3CC4-9626DA2B4CE6}.Release|Any CPU.ActiveCfg = Release
+		{65EC723C-12A4-4D4E-B741-6CDA65267DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65EC723C-12A4-4D4E-B741-6CDA65267DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65EC723C-12A4-4D4E-B741-6CDA65267DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65EC723C-12A4-4D4E-B741-6CDA65267DD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
