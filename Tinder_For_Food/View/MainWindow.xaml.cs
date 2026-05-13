@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
@@ -29,19 +28,22 @@ namespace Tinder_For_Food
             CarbohydratesText.Text = $"Carbohydrates: {meal.Carbohydrates}g";
             FatsText.Text = $"Fats: {meal.Fats}g";
 
-            // Ingredients: split by comma for the ItemsControl
+            // Ingredients
             var ingredients = meal.Ingredients
                                   .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                                   .Select(i => i.Trim())
                                   .ToList();
+
             IngredientsList.ItemsSource = ingredients;
 
-            // Load the image
-            if (File.Exists(meal.ImagePath))
+            // Load image
+            try
             {
-                MealImage.Source = new BitmapImage(new Uri(Path.GetFullPath(meal.ImagePath)));
+                MealImage.Source = new BitmapImage(
+                    new Uri($"pack://application:,,,/{meal.ImagePath}")
+                );
             }
-            else
+            catch
             {
                 MealImage.Source = null;
             }
